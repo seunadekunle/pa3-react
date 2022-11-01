@@ -10,7 +10,7 @@ export const users = [
 export let currUser = users
 
 function signInUser(username, password) {
-
+    
 }
 
 function update(username, email, phone) {
@@ -18,5 +18,5 @@ function update(username, email, phone) {
 }
 
 function signUpUser(username, password, email, phone){
-    
+
 }
