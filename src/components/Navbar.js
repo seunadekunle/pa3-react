@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -20,15 +21,15 @@ function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="login.html">
+            <Link class="nav-item nav-link" to={`login`}>
               Login
-            </a>
-            <a class="nav-item nav-link" href="AcctPg.html">
-              User
-            </a>
-            <a class="nav-item nav-link" href="signup.html">
+            </Link>
+            <Link class="nav-item nav-link" to={`signup`}>
+              Login
+            </Link>
+            <Link class="nav-item nav-link" to={`signup`}>
               New
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
