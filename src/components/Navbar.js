@@ -25,7 +25,7 @@ function Navbar() {
               Login
             </Link>
             <Link class="nav-item nav-link" to={`signup`}>
-              Login
+              Signup
             </Link>
             <Link class="nav-item nav-link" to={`signup`}>
               New
