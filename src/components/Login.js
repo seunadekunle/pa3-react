@@ -4,7 +4,7 @@ import { currUser } from "../state";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
-function Login(props) {
+export default function Login(props) {
   const [username, setUsername] = useState();
   const navigate = useNavigate();
 
@@ -23,7 +23,6 @@ function Login(props) {
 
   return (
     <div className="Login">
-      <Navbar/>
       <form onSubmit={(e) => onSubmit(e)}>
         <input
           type="text"
@@ -35,5 +34,3 @@ function Login(props) {
   );
 }
 
-
-export default Login;
