@@ -1,13 +1,13 @@
 import "./Styles.css";
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div className="Navbar">
       <nav class="navbar navbar-expand-lg">
-      <Link class="navbar-brand" to={`login`}>
+        <Link class="navbar-brand" to={`login`}>
           Project
-      </Link>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -21,13 +21,13 @@ function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <Link class="nav-item nav-link" to={`login`}>
+            <Link class="nav-item nav-link" to="/login">
               Login
             </Link>
-            <Link class="nav-item nav-link" to={`signup`}>
+            <Link class="nav-item nav-link" to="/signup">
               New
             </Link>
-            <Link class="nav-item nav-link" to={`account`}>
+            <Link class="nav-item nav-link" to="/account">
               User
             </Link>
           </div>

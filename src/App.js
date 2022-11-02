@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from "./components/Navbar.js" 
 import Footer from './components/Footer.js';
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -11,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Navbar toggleState = {toggleState}/>
+      <Outlet />
       <Footer/>
     </div>
   );

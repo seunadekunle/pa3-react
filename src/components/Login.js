@@ -2,10 +2,13 @@ import "./Styles.css";
 import { useState } from "react";
 import { currUser } from "../state";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
 
-export default function Login(props) {
+function Login(props) {
   const [username, setUsername] = useState();
   const navigate = useNavigate();
+
+  localStorage.setItem("key", "value")
 
   function onSubmit(e) {
     e.preventDefault();
@@ -15,11 +18,12 @@ export default function Login(props) {
 
     props.toggleState();
 
-    navigate("/login");
+    navigate("/account");
   }
 
   return (
     <div className="Login">
+      <Navbar/>
       <form onSubmit={(e) => onSubmit(e)}>
         <input
           type="text"
@@ -27,11 +31,9 @@ export default function Login(props) {
           onChange={(e) => setUsername(e.target.value)}
         />
       </form>
-      <footer class="text-center text-lg-start bg-light text-muted">
-        <div class="text-center p-4">
-          © 2022 Copyright: Seun Adekunle | Jalen Marshall
-        </div>
-      </footer>
     </div>
   );
 }
+
+
+export default Login;

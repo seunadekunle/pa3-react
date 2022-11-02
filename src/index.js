@@ -1,45 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import {
   createBrowserRouter,
-  RouterProvider,
   Route,
+  BrowserRouter,
+  Routes,
 } from "react-router-dom";
 
-import Login from "./components/Login" 
-import SignUp from './components/SignUp';
-import Account from './components/Account';
+import Login from "./components/Login.js";
+import SignUp from "./components/SignUp.js";
+import Account from "./components/Account.js";
 
-// parent-child routes to prevent errors
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <SignUp />,
-      },
-      {
-        path: "/account",
-        element: <Account />,
-      }
-    ],
-  },
-]);
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<App />} />
+      <Route path="login" element={<Login />} />
+      <Route path="account" element={<Account />} />
+      <Route path="signup" element={<SignUp />} />
+    </Routes>
+  </BrowserRouter>
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
