@@ -32,11 +32,6 @@ function Login(props) {
           </form>
           
     </div>
-    
-
-    
-
-  
   </body>
 
   );
