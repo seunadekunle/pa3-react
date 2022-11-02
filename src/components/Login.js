@@ -4,33 +4,43 @@ import { currUser } from "../state";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 
-export default function Login(props) {
-  const [username, setUsername] = useState();
-  const navigate = useNavigate();
-
-  localStorage.setItem("key", "value")
-
-  function onSubmit(e) {
-    e.preventDefault();
-
-    currUser.username = username;
-    console.log(username);
-
-    props.toggleState();
-
-    navigate("/account");
-  }
-
+function Login(props) {
   return (
-    <div className="Login">
-      <form onSubmit={(e) => onSubmit(e)}>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </form>
+  
+  <body>
+    <div class = "form-wrapper">
+        <form>
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+              />
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="floatingPassword"
+                placeholder="Password"
+              />
+              <label for="floatingPassword">Password</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          
     </div>
+    
+
+    
+
+  
+  </body>
+
   );
 }
 
+
+export default Login;
