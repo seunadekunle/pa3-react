@@ -9,24 +9,30 @@ import {
   Route,
 } from "react-router-dom";
 
-import Login from "./components/Login.js" 
+import Login from "./components/Login" 
 import SignUp from './components/SignUp';
+import Account from './components/Account';
 
-
-
+// parent-child routes to prevent errors
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+      {
+        path: "/account",
+        element: <Account />,
+      }
+    ],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/signup",
-    element: <SignUp />,
-  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

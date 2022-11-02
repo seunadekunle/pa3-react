@@ -25,10 +25,10 @@ function Navbar() {
               Login
             </Link>
             <Link class="nav-item nav-link" to={`signup`}>
-              Signup
-            </Link>
-            <Link class="nav-item nav-link" to={`signup`}>
               New
+            </Link>
+            <Link class="nav-item nav-link" to={`account`}>
+              User
             </Link>
           </div>
         </div>
