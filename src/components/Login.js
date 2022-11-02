@@ -1,4 +1,4 @@
-import "./Pages.css";
+import "./Styles.css";
 import { useState } from "react";
 import { currUser } from "../state";
 import { useNavigate } from "react-router-dom";

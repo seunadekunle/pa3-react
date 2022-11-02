@@ -1,13 +1,13 @@
-import "./Navbar.css";
+import "./Styles.css";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div className="Navbar">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          Project Two
-        </a>
+      <nav class="navbar navbar-expand-lg">
+      <Link class="navbar-brand" to={`login`}>
+          Project
+      </Link>
         <button
           class="navbar-toggler"
           type="button"

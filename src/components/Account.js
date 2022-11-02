@@ -1,4 +1,4 @@
-import "./Pages.css";
+import "./Styles.css";
 import Footer from "./Footer";
 import { currUser } from "../state.js";
 
