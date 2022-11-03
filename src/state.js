@@ -7,20 +7,27 @@ export const users = [
  }
 ];
 
-function signInUser(username, password) {
+export function signInUser(username, password) {
+    console.log(password)
     let searchedUser = users.find(user => user.username === username && user.password === password);
+
+    if (searchedUser === undefined) {
+        return -1;
+    }
+
     currUser = searchedUser;
+    return 1;
 }
 
-function update(username, email, phone) {
-    let searchedUser = users.find(user => user.username);
+export function update(username, email, phone) {
+    let searchedUser = users.find(user => user.username === username);
     searchedUser.email = email
     searchedUser.telephone = phone
 
     currUser = searchedUser;
 }
 
-function signUpUser(username, password, email, phone){
+export function signUpUser(username, password, email, phone){
     let user = {
         username: username,
         email: email,
@@ -29,6 +36,7 @@ function signUpUser(username, password, email, phone){
     }
 
     users.unshift(user);
+    console.log(users);
     currUser = user;
 }
 
