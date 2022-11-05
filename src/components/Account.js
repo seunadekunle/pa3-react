@@ -69,7 +69,7 @@ function hideAlert() {
                       placeholder="Phone Number: 1974901704"
                       value={phone}
                       onChange={(e) => {
-                      setPassword(e.target.value);
+                      setPhone(e.target.value);
                       hideAlert();
                       }}
                     />
