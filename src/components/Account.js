@@ -3,6 +3,7 @@ import { useState } from "react";
 import { users} from "../state";
 import { useNavigate } from "react-router-dom";
 import { update } from "../state";
+import { currUser } from "../state";
 import Alert from "./Alert";
 
 
@@ -24,19 +25,26 @@ function showAlert() {
 function hideAlert() {
   setShow(false);
 }
+
+function onSubmit(e){
+  e.preventDefault();
+
+ update.currUser();
+
+}
 // This is another part I am unsure about. I looked in the Login page and if we need 
 //Values I can assign those can create forms as well.
   return (
     <body>
-        <form>
+        <form onSubmit={(e) => onSubmit(e)}>
           
                 <div class="form-wrapper">
                     <label for="floatingUser">Username</label>
                     <input
-                      type="Username"
+                      type="username"
                       class="form-control"
                       id="floatingUser"
-                      placeholder="Username: RockStar28"
+                      placeholder={currUser.username}
                       value={username}
                       onChange={(e) => {
                       setUsername(e.target.value);
@@ -51,7 +59,7 @@ function hideAlert() {
                       type="email"
                       class="form-control"
                       id="floatingEmail"
-                      placeholder="Email: SupremeDreams@uky.edu"
+                      placeholder={currUser.email}
                       value={email}
                       onChange={(e) => {
                       setEmail(e.target.value);
@@ -66,7 +74,7 @@ function hideAlert() {
                       type="phone number"
                       class="form-control"
                       id="floatingPhone"
-                      placeholder="Phone Number: 1974901704"
+                      placeholder={currUser.telephone}
                       value={phone}
                       onChange={(e) => {
                       setPhone(e.target.value);
@@ -77,10 +85,10 @@ function hideAlert() {
 
                   <div class = "form-wrapper">
                   <button type="submit" class="form-wrapper">Update</button>
+                  
                   </div>
                   
         </form>
     </body>
   );
 }
-
