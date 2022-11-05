@@ -9,6 +9,13 @@ export const users = [
 
 export function signInUser(username, password) {
     console.log(password)
+    // let searchedUserJSON = localStorage.getItem(username)
+    // if (searchedUserJSON == null) {
+    //     return -1
+    // }
+
+    // currUser = JSON.parse(searchedUserJSON)
+
     let searchedUser = users.find(user => user.username === username && user.password === password);
 
     if (searchedUser === undefined) {
@@ -20,11 +27,13 @@ export function signInUser(username, password) {
 }
 
 export function update(username, email, phone) {
-    let searchedUser = users.find(user => user.username === username);
-    searchedUser.email = email
-    searchedUser.telephone = phone
+    currUser.username = username
+    currUser.email = email
+    currUser.telephone = phone
 
-    currUser = searchedUser;
+    // currUser.email = email
+    // currUser.pgone = phone
+    //
 }
 
 export function signUpUser(username, password, email, phone){
@@ -34,6 +43,8 @@ export function signUpUser(username, password, email, phone){
         password: password,
         telephone: phone
     }
+
+    // localStorage.setItem(username, JSON.stringify(user))
 
     users.unshift(user);
     console.log(users);
