@@ -8,8 +8,6 @@ import Alert from "./Alert";
 
 export default function Account() {
   const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setconfirmPassword] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
@@ -39,6 +37,11 @@ function hideAlert() {
                       class="form-control"
                       id="floatingUser"
                       placeholder="Username: RockStar28"
+                      value={username}
+                      onChange={(e) => {
+                      setUsername(e.target.value);
+                      hideAlert();
+                      }}
                     />
                   </div>
 
@@ -49,6 +52,11 @@ function hideAlert() {
                       class="form-control"
                       id="floatingEmail"
                       placeholder="Email: SupremeDreams@uky.edu"
+                      value={email}
+                      onChange={(e) => {
+                      setEmail(e.target.value);
+                      hideAlert();
+                      }}
                     />
                   </div>
 
@@ -59,11 +67,18 @@ function hideAlert() {
                       class="form-control"
                       id="floatingPhone"
                       placeholder="Phone Number: 1974901704"
+                      value={phone}
+                      onChange={(e) => {
+                      setPassword(e.target.value);
+                      hideAlert();
+                      }}
                     />
                   </div>
+
                   <div class = "form-wrapper">
                   <button type="submit" class="form-wrapper">Update</button>
                   </div>
+                  
         </form>
     </body>
   );
