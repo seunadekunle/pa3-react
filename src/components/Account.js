@@ -61,7 +61,9 @@ function hideAlert() {
                       placeholder="Phone Number: 1974901704"
                     />
                   </div>
+                  <div class = "form-wrapper">
                   <button type="submit" class="form-wrapper">Update</button>
+                  </div>
         </form>
     </body>
   );
