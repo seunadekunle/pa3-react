@@ -22,10 +22,20 @@ function App() {
       <Navbar toggleState={toggleState} name={headerText} />
       <div className="container">
         <Routes>
-          <Route exact path="/" element={<Login changeHeader={changeHeader}/>} />
-          <Route path="login" element={<Login changeHeader={changeHeader}/>} />
-          <Route path="account" element={<Account changeHeader={changeHeader}/>} />
-          <Route path="signup" element={<SignUp changeHeader={changeHeader}/>} />
+          <Route
+            exact
+            path="/"
+            element={<Login changeHeader={changeHeader} />}
+          />
+          <Route path="login" element={<Login changeHeader={changeHeader} />} />
+          <Route
+            path="account"
+            element={<Account changeHeader={changeHeader} />}
+          />
+          <Route
+            path="signup"
+            element={<SignUp changeHeader={changeHeader} />}
+          />
         </Routes>
       </div>
       <Outlet />

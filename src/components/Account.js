@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { currUser } from "../state";
 import Alert from "./Alert";
 
-export default function Account({changeHeader}) {
+export default function Account(props) {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -57,7 +57,7 @@ export default function Account({changeHeader}) {
       return;
     }
 
-    changeHeader(username);
+    props.changeHeader(username);
   }
   //Values I can assign those can create forms as well.
   return (

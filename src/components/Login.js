@@ -4,7 +4,7 @@ import { signInUser } from "../state";
 import { useNavigate } from "react-router-dom";
 import Alert from "./Alert";
 
-export default function Login({changeHeader}) {
+export default function Login(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
@@ -36,7 +36,7 @@ export default function Login({changeHeader}) {
     let signInVal = signInUser(String(username), String(password));
 
     if (signInVal === 1) {
-      changeHeader(username);
+      props.changeHeader(username);
       navigate("/account");
     } else {
       setAlertMessage("Username/Password not found");
@@ -46,41 +46,41 @@ export default function Login({changeHeader}) {
   }
 
   return (
-      <div class="form-wrapper">
-        <form onSubmit={(e) => onSubmit(e)}>
-          <div class="form-floating mb-3">
-            <input
-              type="username"
-              class="form-control"
-              placeholder="Username"
-              id="floatingInput"
-              value={username}
-              onChange={(e) => {
-                setUsername(e.target.value);
-                hideAlert();
-              }}
-            />
-            <label for="floatingInput">Username</label>
-          </div>
-          <div class="form-floating">
-            <input
-              type="password"
-              class="form-control"
-              id="floatingPassword"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-                hideAlert();
-              }}
-            />
-            <label for="floatingPassword">Password</label>
-          </div>
-          <button type="submit" class="btn btn-primary">
-            Submit
-          </button>
-        </form>
-        {show && <Alert message={alertMessage} />}
-      </div>
+    <div class="form-wrapper">
+      <form onSubmit={(e) => onSubmit(e)}>
+        <div class="form-floating mb-3">
+          <input
+            type="username"
+            class="form-control"
+            placeholder="Username"
+            id="floatingInput"
+            value={username}
+            onChange={(e) => {
+              setUsername(e.target.value);
+              hideAlert();
+            }}
+          />
+          <label for="floatingInput">Username</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+              hideAlert();
+            }}
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
+      {show && <Alert message={alertMessage} />}
+    </div>
   );
 }
