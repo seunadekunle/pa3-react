@@ -46,15 +46,22 @@ export default function Account() {
       return;
     }
 
-    if((username === currUser.username) && (email === currUser.email) && (phone === currUser.phone)){
+
+    console.log(username === currUser.username)
+    console.log(email === currUser.email)
+    console.log(phone === currUser.phone)
+    console.log(phone)
+    console.log(currUser.phone)
+
+    if((username === currUser.username) && (email === currUser.email) && (phone === currUser.telephone)){
       setAlertMessage("Nothing to update please make a change");
       showAlert();
-      console.log(username);
-      console.log(email);
-      console.log(phone); 
-      console.log(currUser.username);
-      console.log(currUser.email);
-      console.log(currUser.phone);
+      // console.log(username);
+      // console.log(email);
+      // console.log(phone); 
+      // console.log(currUser.username);
+      // console.log(currUser.email);
+      // console.log(currUser.phone);
       return;
       
 
