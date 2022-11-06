@@ -47,6 +47,7 @@ export default function SignUp(props) {
     }
 
     props.changeHeader(username);
+    props.toggleState();
     navigate("/account");
   }
 

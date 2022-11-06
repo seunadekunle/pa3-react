@@ -25,16 +25,27 @@ function App() {
           <Route
             exact
             path="/"
-            element={<Login toggleState={toggleState} changeHeader={changeHeader} />}
+            element={
+              <Login toggleState={toggleState} changeHeader={changeHeader} />
+            }
           />
-          <Route path="login" element={<Login toggleState={toggleState} changeHeader={changeHeader} />} />
+          <Route
+            path="login"
+            element={
+              <Login toggleState={toggleState} changeHeader={changeHeader} />
+            }
+          />
           <Route
             path="account"
-            element={<Account  toggleState={toggleState} changeHeader={changeHeader} />}
+            element={
+              <Account toggleState={toggleState} changeHeader={changeHeader} />
+            }
           />
           <Route
             path="signup"
-            element={<SignUp toggleState={toggleState} changeHeader={changeHeader} />}
+            element={
+              <SignUp toggleState={toggleState} changeHeader={changeHeader} />
+            }
           />
         </Routes>
       </div>
