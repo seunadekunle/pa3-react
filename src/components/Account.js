@@ -5,10 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { currUser } from "../state";
 import Alert from "./Alert";
 
-export default function Account() {
-  const [username, setUsername] = useState(currUser.username);
-  const [email, setEmail] = useState(currUser.email);
-  const [phone, setPhone] = useState(currUser.telephone);
+export default function Account({changeHeader}) {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
   const [show, setShow] = useState(false);
 
@@ -56,6 +56,8 @@ export default function Account() {
       showAlert();
       return;
     }
+
+    changeHeader(username);
   }
   //Values I can assign those can create forms as well.
   return (

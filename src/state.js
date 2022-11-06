@@ -37,12 +37,12 @@ export function updateUser(username, email, phone) {
     localStorage.setItem(currUser.username, JSON.stringify(currUser));
     return 1;
   } else {
-    console.log("in2");
     let tempPass = currUser.password;
 
     localStorage.removeItem(currUser.username);
-    return signUpUser(username, tempPass, username, phone);
+    return signUpUser(username, tempPass, email, phone);
   }
+
 }
 
 export function signUpUser(username, password, email, phone) {

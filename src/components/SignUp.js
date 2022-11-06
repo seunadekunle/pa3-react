@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from "./Alert";
 
-export default function SignUp() {
+export default function SignUp({changeHeader}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
@@ -46,6 +46,7 @@ export default function SignUp() {
       return;
     }
 
+    changeHeader(username);
     navigate("/account");
   }
 

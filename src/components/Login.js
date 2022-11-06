@@ -4,7 +4,7 @@ import { signInUser } from "../state";
 import { useNavigate } from "react-router-dom";
 import Alert from "./Alert";
 
-export default function Login(props) {
+export default function Login({changeHeader}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
@@ -36,6 +36,7 @@ export default function Login(props) {
     let signInVal = signInUser(String(username), String(password));
 
     if (signInVal === 1) {
+      changeHeader(username);
       navigate("/account");
     } else {
       setAlertMessage("Username/Password not found");

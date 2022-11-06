@@ -1,13 +1,15 @@
 import "./Styles.css";
 import { Outlet, Link } from "react-router-dom";
+import { currUser } from "../state";
+import { users } from "../state"
 
-function Navbar() {
+export default function Navbar(props) {
   return (
     <div className="Navbar">
       <nav class="navbar navbar-expand-lg">
-      <Link class="navbar-brand" to={`login`}>
+        <Link class="navbar-brand" to={`login`}>
           Project
-      </Link>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -32,10 +34,11 @@ function Navbar() {
             </Link>
           </div>
         </div>
+        <div classname = "floating-wrapper">
+          <label> Current User: { props.name }</label>
+        </div>
       </nav>
-      < Outlet/>
     </div>
+    
   );
 }
-
-export default Navbar;
