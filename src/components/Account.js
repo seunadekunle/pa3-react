@@ -6,9 +6,9 @@ import { currUser } from "../state";
 import Alert from "./Alert";
 
 export default function Account() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
+  const [username, setUsername] = useState(currUser.username);
+  const [email, setEmail] = useState(currUser.email);
+  const [phone, setPhone] = useState(currUser.telephone);
   const [alertMessage, setAlertMessage] = useState("");
   const [show, setShow] = useState(false);
 
@@ -47,12 +47,6 @@ export default function Account() {
     ) {
       setAlertMessage("Nothing to update please make a change");
       showAlert();
-      // console.log(username);
-      // console.log(email);
-      // console.log(phone);
-      // console.log(currUser.username);
-      // console.log(currUser.email);
-      // console.log(currUser.phone);
       return;
     }
 
@@ -63,7 +57,6 @@ export default function Account() {
       return;
     }
   }
-  // This is another part I am unsure about. I looked in the Login page and if we need
   //Values I can assign those can create forms as well.
   return (
     <body>

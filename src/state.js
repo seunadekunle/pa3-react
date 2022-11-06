@@ -26,7 +26,7 @@ export function signInUser(username, password) {
 }
 
 export function updateUser(username, email, phone) {
-  if (localStorage.getItem(username) != null) {
+  if (username !== currUser.username && localStorage.getItem(username) != null) {
     return -1;
   }
 
