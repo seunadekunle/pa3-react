@@ -1,7 +1,9 @@
 import "./Styles.css";
 import { Outlet, Link } from "react-router-dom";
+import { currUser } from "../state";
+import { users } from "../state"
 
-function Navbar() {
+export default function Navbar() {
   return (
     <div className="Navbar">
       <nav class="navbar navbar-expand-lg">
@@ -32,9 +34,11 @@ function Navbar() {
             </Link>
           </div>
         </div>
+        <div classname = "floating-wrapper">
+          <label> Current User: { currUser.username }</label>
+        </div>
       </nav>
     </div>
+    
   );
 }
-
-export default Navbar;
