@@ -11,7 +11,7 @@ import SignUp from "./components/SignUp.js";
 import Account from "./components/Account.js";
 
 function App() {
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
   const [headerText, setHeaderText] = useState("");
 
   const changeHeader = (val) => setHeaderText(val);
@@ -19,22 +19,22 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar toggleState={toggleState} name={headerText} />
+      <Navbar toggle={toggle} name={headerText} />
       <div className="container">
         <Routes>
           <Route
             exact
             path="/"
-            element={<Login changeHeader={changeHeader} />}
+            element={<Login toggleState={toggleState} changeHeader={changeHeader} />}
           />
-          <Route path="login" element={<Login changeHeader={changeHeader} />} />
+          <Route path="login" element={<Login toggleState={toggleState} changeHeader={changeHeader} />} />
           <Route
             path="account"
-            element={<Account changeHeader={changeHeader} />}
+            element={<Account  toggleState={toggleState} changeHeader={changeHeader} />}
           />
           <Route
             path="signup"
-            element={<SignUp changeHeader={changeHeader} />}
+            element={<SignUp toggleState={toggleState} changeHeader={changeHeader} />}
           />
         </Routes>
       </div>

@@ -37,6 +37,7 @@ export default function Login(props) {
 
     if (signInVal === 1) {
       props.changeHeader(username);
+      props.toggleState()
       navigate("/account");
     } else {
       setAlertMessage("Username/Password not found");

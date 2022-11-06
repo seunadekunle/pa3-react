@@ -35,7 +35,7 @@ export default function Navbar(props) {
           </div>
         </div>
         <div classname = "floating-wrapper">
-          <label> Current User: { props.name }</label>
+          {props.toggle && <label> Current User: { props.name }</label>}
         </div>
       </nav>
     </div>

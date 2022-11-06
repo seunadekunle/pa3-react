@@ -1,8 +1,8 @@
 export let currUser = {
-  username: "test",
-  email: "test@example.com",
-  password: "123",
-  telephone: "23234",
+  username: "",
+  email: "",
+  password: "",
+  telephone: "",
 };
 
 export let showStatus = false;
