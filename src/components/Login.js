@@ -38,7 +38,7 @@ export default function Login(props) {
     if (signInVal === 1) {
       navigate("/account");
     } else {
-      setAlertMessage("User not found");
+      setAlertMessage("Username/Password not found");
       showAlert();
       return;
     }

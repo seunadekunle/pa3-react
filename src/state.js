@@ -1,54 +1,63 @@
-export const users = [
- {
-    username:"test",
-    email: "test@example.com",
-    password: "123",
-    telephone: "23234"
- }
-];
+export let currUser = {
+  username: "test",
+  email: "test@example.com",
+  password: "123",
+  telephone: "23234",
+};
+
+export let showStatus = false;
 
 export function signInUser(username, password) {
-    console.log(password)
-    // let searchedUserJSON = localStorage.getItem(username)
-    // if (searchedUserJSON == null) {
-    //     return -1
-    // }
+  // if the typed in username doesn't work
+  let searchedUserJSON = localStorage.getItem(username);
+  if (searchedUserJSON == null) {
+    return -1;
+  }
 
-    // currUser = JSON.parse(searchedUserJSON)
+  // if the typed in password doesn't work
+  let tempUser = JSON.parse(searchedUserJSON);
+  if (password !== tempUser.password) {
+    return -1;
+  }
 
-    let searchedUser = users.find(user => user.username === username && user.password === password);
+  currUser = tempUser;
+  showStatus = true;
+  return 1;
+}
 
-    if (searchedUser === undefined) {
-        return -1;
-    }
+export function updateUser(username, email, phone) {
+  if (localStorage.getItem(username) != null) {
+    return -1;
+  }
 
-    currUser = searchedUser;
+  if (username === currUser.username) {
+    currUser.email = email;
+    currUser.telephone = phone;
+
+    localStorage.setItem(currUser.username, JSON.stringify(currUser));
     return 1;
+  } else {
+    console.log("in2");
+    let tempPass = currUser.password;
+
+    localStorage.removeItem(currUser.username);
+    return signUpUser(username, tempPass, username, phone);
+  }
 }
 
-export function update(username, email, phone) {
-    currUser.username = username
-    currUser.email = email
-    currUser.telephone = phone
+export function signUpUser(username, password, email, phone) {
+  if (localStorage.getItem(username) != null) {
+    return -1;
+  }
 
-    // currUser.email = email
-    // currUser.pgone = phone
-    //
+  let user = {
+    username: username,
+    email: email,
+    password: password,
+    telephone: phone,
+  };
+
+  currUser = user;
+  localStorage.setItem(username, JSON.stringify(user));
+  return 1;
 }
-
-export function signUpUser(username, password, email, phone){
-    let user = {
-        username: username,
-        email: email,
-        password: password,
-        telephone: phone
-    }
-
-    // localStorage.setItem(username, JSON.stringify(user))
-
-    users.unshift(user);
-    console.log(users);
-    currUser = user;
-}
-
-export let currUser = users[0]

@@ -33,12 +33,18 @@ export default function SignUp() {
       return;
     }
 
-    signUpUser(
+    let result = signUpUser(
       String(username),
       String(password),
       String(email),
       String(phone)
     );
+
+    if (result === -1) {
+      setAlertMessage("User already exists with the same username");
+      showAlert();
+      return;
+    }
 
     navigate("/account");
   }
@@ -53,6 +59,10 @@ export default function SignUp() {
             id="floatingInput2"
             placeholder="username"
             required
+            onChange={(e) => {
+              setUsername(e.target.value);
+              hideAlert();
+            }}
           />
           <label for="floatingInput2">Username</label>
         </div>
@@ -63,6 +73,10 @@ export default function SignUp() {
             id="floatingInput"
             placeholder="name@example.com"
             required
+            onChange={(e) => {
+              setEmail(e.target.value);
+              hideAlert();
+            }}
           />
           <label for="floatingInput">Email Address</label>
         </div>
@@ -102,6 +116,10 @@ export default function SignUp() {
             id="floatingTel"
             placeholder="Phone Number"
             required
+            onChange={(e) => {
+              setPhone(e.target.value);
+              hideAlert();
+            }}
           />
           <label for="floatingTel">Telephone</label>
         </div>

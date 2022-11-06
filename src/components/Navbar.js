@@ -5,9 +5,9 @@ function Navbar() {
   return (
     <div className="Navbar">
       <nav class="navbar navbar-expand-lg">
-        <Link class="navbar-brand" to={`login`}>
+      <Link class="navbar-brand" to={`login`}>
           Project
-        </Link>
+      </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -33,6 +33,7 @@ function Navbar() {
           </div>
         </div>
       </nav>
+      < Outlet/>
     </div>
   );
 }
